@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>What's in a word?</title>
+  <meta name="description" content="">
+  <meta name="author" content="Steven Bedrick & Alison Presmanes Hill">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="./frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="./frameworks/revealjs/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="./highlighters/highlight.js/css/default.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  
+  <!-- My Fonts -->
+
+<p><link href='https://fonts.googleapis.com/css?family=Raleway:900,800,700,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Cabin:400,700italic,700,400italic,500,500italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"></p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<style>
+.reveal h1 {
+    color: #DD6540; 
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: none;
+    text-align: left;
+    padding-bottom: 30px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-family: Raleway, sans-serif;
+}
+.reveal h2 {
+    color: #6699DD; 
+    text-align: left;
+    font-size: 1.5em; 
+    font-weight: 700;
+    text-transform: none;
+    padding-bottom: 30px;
+    letter-spacing: normal;
+    font-family: Cabin, sans-serif;
+}
+.reveal h3 {
+    color: #64354A;
+    text-align: left;
+    font-size: 1em; 
+    text-transform: capitalize;
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-family: Cabin, sans-serif;
+}
+.reveal h6 {
+    color: #92E1FE;
+    text-align: left;
+    padding-bottom: 10px;
+    font-family: Cabin, sans-serif;
+}
+.reveal body {
+    font-family: Cabin, sans-serif;
+    text-align: left;
+}
+.reveal p {
+    font-family: Cabin, sans-serif;
+}
+.reveal ul {
+    font-family: Cabin, sans-serif;
+}
+.reveal ol {
+    font-family: Cabin, sans-serif;
+}
+.reveal li {
+    font-family: Cabin, sans-serif;
+}
+.reveal i.fa { 
+    font-family:FontAwesome; 
+    font-style: normal; 
+    color: #6699DD;
+} 
+.reveal a:link { 
+/* unvisited link */ 
+    font-family: Cabin, sans-serif;
+    color: #D14D4D; 
+} 
+.reveal a:visited { 
+/* visited link */
+    font-family: Cabin, sans-serif;
+    color: #D14D4D; 
+} 
+.reveal a:hover { 
+/* hover link */
+    color: #92E1FE; 
+} 
+</style>
+
+<h1>What&#39;s in a word?</h1>
+
+<h2>Techniques for automating analysis of language</h2>
+
+<h3>Steven Bedrick &amp; Alison Presmanes Hill</h3>
+
+<div class="list-group" style="font-size: .6em" align = "left">
+  <a class="list-group-item" href="mailto:bedricks@ohsu.edu"><i class="fa fa-envelope fa-fw"></i>&nbsp; bedricks@ohsu.edu</a><br>
+    <a class="list-group-item" href="mailto:hillali@ohsu.edu"><i class="fa fa-envelope fa-fw"></i>&nbsp; hillali@ohsu.edu</a><br>
+  <a class="list-group-item" href="#"><i class="fa fa-map-marker fa-fw"></i>&nbsp; OHSU Gaines Hall 19 & 21 (we're neighbors)</a>
+</div>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h2>Why computers and linguistics?</h2>
+  <p> Traditional content analysis techniques are: </p>
+
+<ul>
+<li>Time-consuming</li>
+<li>Subjective</li>
+<li>Tedious!</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>Software can help!</h2>
+  
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h2>A note on &quot;objectivity&quot;</h2>
+  <p> "Computers are inherently objective, right?" </p>
+
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h2>Steps in computational analysis of language:</h2>
+  <ol>
+<li>Frame question</li>
+<li>Identify data</li>
+<li>Know your data</li>
+<li>Figure out what to measure</li>
+<li>Measure it</li>
+<li>Rinse and repeat!</li>
+</ol>
+
+</section>
+<section class='' data-state='' id='slide-6'>
+  <h2>Today: A <em>whirlwind tour</em> of what this kind of analysis looks like!</h2>
+  
+</section>
+<section class='' data-state='' id='slide-7'>
+  <h2>Steps in computational analysis of language:</h2>
+  <ol>
+<li>Frame question</li>
+<li>Identify data</li>
+<li>Know your data</li>
+<li>Figure out what to measure</li>
+<li>Measure it</li>
+<li>Rinse and repeat!</li>
+</ol>
+
+</section>
+<section class='' data-state='' id='slide-8'>
+  <h2>What is Python?</h2>
+  <p> Python is a programming language, that is perfect for: </p>
+
+<ul>
+<li>Automating repetitive processes</li>
+<li>Working with files</li>
+<li>Working with text</li>
+<li>Free!</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-9'>
+  <h2>We will use Python for:</h2>
+  <ol>
+<li>Obtaining our data</li>
+<li>Cleaning our data</li>
+<li>Organizing our data</li>
+</ol>
+
+</section>
+<section class='' data-state='' id='slide-10'>
+  <h2>To Python!</h2>
+  
+</section>
+<section class='' data-state='' id='slide-11'>
+  <h2>What is R?</h2>
+  <p> R is a programming language.</p>
+
+<p class="fragment">There is also a simple software environment for using R, released through the comprehensive R archive network (CRAN).</p>
+
+</section>
+<section class='' data-state='' id='slide-12'>
+  <h2>Why learn/use R?</h2>
+  <ul class = "build incremental">
+<li>Free</li>
+<li>Open source</li>
+<li>Available on almost every major platform</li>
+</ul>
+
+<p class="fragment" style="color: #D14D4D; font-family: 'Lobster Two', cursive;">... all of which makes your research <span class="fragment">reproducible,</span> <span class="fragment">reusable,</span> <span class="fragment">and shareable</span></p>
+
+</section>
+<section class='' data-state='' id='slide-13'>
+  <h2>What is RStudio?</h2>
+  <p><img src="https://www.rstudio.com/wp-content/uploads/2014/03/blue-250.png" style="border: 0;"></p>
+
+<p>RStudio provides an <em>integrated development environment</em> or IDE for using R.</p>
+
+<p>There is an edition of RStudio that is free and open source, just like R.</p>
+
+</section>
+<section class='' data-state='' id='slide-14'>
+  <h2>We will use R for:</h2>
+  <ol>
+<li>Cleaning our data (even more)</li>
+<li>Wrangling our data</li>
+<li>Processing our data (getting summary statistics)</li>
+<li>Visualizing our data</li>
+</ol>
+
+</section>
+<section class='' data-state='' id='slide-15'>
+  <h2>What do I need to know about R <strong>right now</strong>?</h2>
+  <ul class = "build incremental">
+<li>R is an interpreter <i class="fa fa-angle-right"></i></li>
+<li>Object-oriented <code>&lt;-</code></li>
+<li>Case matters (<code>i_like_snake_case</code>)</li>
+<li>Anything behind a <code>#</code> is a comment</li>
+<li>Packages! Install once per machine, once per R session</li>
+<li>Piping/chaining with the <code>%&gt;%</code> operator</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-16'>
+  <h2>Object-oriented</h2>
+  <pre><code class="r">fave_number &lt;- 13
+fave_number*3 + 5^3
+</code></pre>
+
+<pre><code>[1] 164
+</code></pre>
+
+<pre><code class="r">new_thing &lt;- c(1, 2, 8, &quot;Willie Nelson&quot;)
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-17'>
+  <h2>Case matters</h2>
+  <pre><code class="r">new_thing &lt;- c(1, 2, 8, &quot;Willie Nelson&quot;)
+New_thing
+</code></pre>
+
+<pre><code>Error in eval(expr, envir, enclos): object &#39;New_thing&#39; not found
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-18'>
+  <h2>Anything behind a <code>#</code> is a comment</h2>
+  <pre><code class="r">new_thing &lt;- c(1, 2, 8, &quot;Willie Nelson&quot;)
+# I can say anything I want here
+and # here
+</code></pre>
+
+<pre><code>Error in eval(expr, envir, enclos): object &#39;and&#39; not found
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-19'>
+  <h2>Packages!</h2>
+  <p><span style="color: #D14D4D">Install once</span> per machine</p>
+
+<pre><code class="r">install.packages(&quot;ggplot2&quot;)
+</code></pre>
+
+<p><span style="color: #D14D4D">Load once</span> per R work session</p>
+
+<pre><code class="r">library(ggplot)
+</code></pre>
+
+<p class="fragment" style="color: #D14D4D; font-family: 'Lobster Two', cursive;">also: quotes matter, sorry </p>
+
+</section>
+<section class='' data-state='' id='slide-20'>
+  <h1><center>%&gt;%</center></h1>
+  <h2><center>this is the magrittr operator</center></h2>
+
+</section>
+<section class='' data-state='' id='slide-21'>
+  <h2>%&gt;%</h2>
+  <p><span style="color: #D14D4D">Nesting</span> your dataframe in commands is hard to read</p>
+
+<pre><code class="r">head(iris)
+</code></pre>
+
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+</code></pre>
+
+<p><span style="color: #D14D4D">Piping</span> your dataframe into a command lets you read L to R</p>
+
+<pre><code class="r">iris %&gt;% head(.)
+</code></pre>
+
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-22'>
+  <h2>%&gt;%</h2>
+  <p>Sequences of commands are read <span style="color: #D14D4D">inside out</span></p>
+
+<pre><code class="r">head(iris[iris$Species == &quot;virginica&quot;, ])
+</code></pre>
+
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+101          6.3         3.3          6.0         2.5 virginica
+102          5.8         2.7          5.1         1.9 virginica
+103          7.1         3.0          5.9         2.1 virginica
+104          6.3         2.9          5.6         1.8 virginica
+105          6.5         3.0          5.8         2.2 virginica
+106          7.6         3.0          6.6         2.1 virginica
+</code></pre>
+
+<p>Chaining your commands lets you read <span style="color: #D14D4D">L to R</span></p>
+
+<pre><code class="r">iris %&gt;% filter(Species == &quot;virginica&quot;) %&gt;% head(.) 
+</code></pre>
+
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+1          6.3         3.3          6.0         2.5 virginica
+2          5.8         2.7          5.1         1.9 virginica
+3          7.1         3.0          5.9         2.1 virginica
+4          6.3         2.9          5.6         1.8 virginica
+5          6.5         3.0          5.8         2.2 virginica
+6          7.6         3.0          6.6         2.1 virginica
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-23'>
+  <h2>Now on to the debates!</h2>
+  <p><img src="https://espnfivethirtyeight.files.wordpress.com/2016/02/bialik-debateliveblog0211ratings-1.png" height = 300, width = 600, style="border: 0;"></p>
+
+</section>
+<section class='' data-state='' id='slide-24'>
+  <h1><center>Wrap-Up</center></h1>
+  
+</section>
+<section class='' data-state='' id='slide-25'>
+  <h1><center>Did you know...</center></h1>
+  <p><center>OHSU has a Computer Science education program?</center></p>
+
+</section>
+<section class='' data-state='' id='slide-26'>
+  <h2>CS @ OHSU</h2>
+  <ul class = "build incremental">
+<li>Courses </li>
+<li>A masters degree program</li>
+<li>A Ph.D. program</li>
+<li>Opportunities for applied work related to health</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-27'>
+  <h2>OHSU&#39;s CSLU</h2>
+  <p>The Center for Spoken Language Understanding focuses on basic and applied research on algorithms for speech and language technology, imaging and biology, with applications comprising a wide range of biomedical and human-machine interface challenges.</p>
+
+</section>
+<section class='' data-state='' id='slide-28'>
+  <h2>Courses</h2>
+  <ul class = "build incremental">
+<li>Machine Learning</li>
+<li>Speech Signal Processing</li>
+<li>Automatic Speech Recognition</li>
+<li>Image Processing</li>
+<li>Natural Language Processing</li>
+<li>Information Retrieval</li>
+<li>Cluster Computing</li>
+<li>Probability &amp; Statistics for Scientists and Engineers</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-29'>
+  <h2>Faculty</h2>
+  <ul>
+<li>Steven Bedrick (PhD, OHSU): information retrieval, brain computer interface</li>
+<li>Alison Presmanes Hill (PhD, Vanderbilt): computational behavioral science</li>
+<li>Peter Heeman (PhD, U. Rochester): HCI, spoken dialogue systems</li>
+<li>Alexander Kain (PhD, OGI): speech synthesis, voice modification</li>
+<li>Kemal Sönmez (PhD, U. Maryland): computational biology, speech recognition</li>
+<li>Jan van Santen (PhD, U. Michigan): speech analysis, computational behavioral modeling</li>
+<li>Xubo Song (PhD, CalTech): medical imaging, machine learning</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-30'>
+  <h2>Jobs</h2>
+  <ul class = "build incremental">
+<li><p>There is an enormous and exponentially growing unmet demand for the skills we teach!</p></li>
+<li><p>Our graduates work at Amazon, AT&amp;T Research, Apple (Siri), the Broad Institute, Google, Intel, Kaiser Permanente, Microsoft Research, Nuance, Sensory, and many other high-tech companies that depend on the speech, language, and image processing we teach</p></li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-31'>
+  <h2>Applying</h2>
+  <ul>
+<li><p>Rolling deadline for admissions: talk to us!</p></li>
+<li><p>Prerequisite: a bachelors degree in computer science, electrical engineering, mathematics, statistics, linguistics, neuroscience, or related fields</p></li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-32'>
+  
+  <p style="text-align: center; font-family: 'Cabin'; color: #6699DD; font-size: 3em;"><a href="http://www.ohsu.edu/csee">www.ohsu.edu/csee</a></br></p>
+
+<p class="fragment" style="color: #D14D4D; font-family: 'Lobster Two', cursive;">Thank you!</p>
+
+</section>
+<section class='' data-state='' id='slide-33'>
+  <h1>What&#39;s in a word?</h1>
+  <h2>Techniques for automating analysis of language</h2>
+
+<h3>Steven Bedrick &amp; Alison Presmanes Hill</h3>
+
+<div class="list-group" style="font-size: .6em" align = "left">
+  <a class="list-group-item" href="mailto:bedricks@ohsu.edu"><i class="fa fa-envelope fa-fw"></i>&nbsp; bedricks@ohsu.edu</a><br>
+    <a class="list-group-item" href="mailto:hillali@ohsu.edu"><i class="fa fa-envelope fa-fw"></i>&nbsp; hillali@ohsu.edu</a><br>
+  <a class="list-group-item" href="#"><i class="fa fa-map-marker fa-fw"></i>&nbsp; OHSU Gaines Hall 19 & 21 (we're neighbors)</a>
+</div>
+  
+
+<hr>
+
+<script>
+$('ul.incremental li').addClass('fragment')
+$('ol.incremental li').addClass('fragment')
+</script>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="./frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="./frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'beige', 
+    transition: Reveal.getQueryHash().transition || 'convex', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: './frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: './frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: './frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: './frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="./highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
